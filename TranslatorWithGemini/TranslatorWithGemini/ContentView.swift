@@ -9,9 +9,6 @@ import SwiftUI
 import GoogleGenerativeAI
 import PDFKit
 
-//let apikey = "AIzaSyDKGv5FdPX3ocAPrSrOYAriC1ZGBa_Gox0"
-let apikey = "AIzaSyBME3QqYa7rMIMWQKsNW1iTjj6jN0YBB18"
-
 struct TextPart: ThrowingPartsRepresentable {
     let text: String
 
@@ -60,7 +57,7 @@ struct ContentView: View {
 
         var translatedPages: [String] = []
         
-        let model = GoogleGenerativeAI.GenerativeModel(name: "gemini-pro", apiKey: apikey, generationConfig: GenerationConfig(maxOutputTokens: 2048))
+        let model = GoogleGenerativeAI.GenerativeModel(name: "gemini-pro", apiKey: "", generationConfig: GenerationConfig(maxOutputTokens: 2048))
 
         for pageIndex in 15...16 {
             guard let page = pdfDocument.page(at: pageIndex) else {
